@@ -7,6 +7,8 @@ def print_menu():
 	print ("1 - Lotofacil")
 	print ("2 - Lotomania")
 	print ("3 - Mega Sena")
+	print ("4 - 1 numero(MEGA)")
+	print ("5 - 4 numeros(Mega Sena)")		
 	print ('-' * 30)
 	check_choise()
 	
@@ -14,7 +16,7 @@ def check_choise():
 	is_valid = 0
 	while is_valid == 0:
 		question = int(raw_input("Escolha o tipo de Jogo: [1-3] \n"))
-		if (question >= 1 and question <= 3):
+		if (question >= 1 and question <= 5):
 			is_valid = 1
 		else:
 			print ""
@@ -32,9 +34,15 @@ def loteria(tipo):
 	elif tipo == 2:
 		lst = range(0,100)
 		qt = 50
-	else:
+	elif tipo == 3:
 		lst = range(1,61)
 		qt = 6
+	elif tipo == 4:
+                lst = range(1,61)
+                qt = 1
+	else:
+                lst = range(1,61)
+                qt = 4
 	print lst	
 	print ordenar(sorteio(lst,qt))
 
